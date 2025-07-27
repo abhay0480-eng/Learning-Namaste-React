@@ -2,7 +2,6 @@
   "name": "ep2_igniting_our_app",
   "version": "1.0.0",
   "description": "learning react Ep 2",
-  "main": "App.js",
   "scripts": {
     "test": "jest"
   },
@@ -10,5 +9,9 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }
