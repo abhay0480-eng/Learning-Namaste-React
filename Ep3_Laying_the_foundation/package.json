@@ -1,0 +1,34 @@
+{
+  "name": "ep2_igniting_our_app",
+  "version": "1.0.0",
+  "description": "learning react Ep 2",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "dev": "parcel index.html --open",
+    "watch": "parcel watch index.html",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --check .",
+    "prettier:write": "prettier --write .",
+    "test:unit": "jest --watchAll",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test": "jest"
+  },
+  "author": "abhay",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "eslint": "^9.32.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.3.0",
+    "parcel": "^2.15.4",
+    "prettier": "^3.6.2"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
