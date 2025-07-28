@@ -9,9 +9,28 @@ import ReactDOM from "react-dom/client";
 // The following line is equivalent to the above React.createElement call.
 // JSX is not valid JavaScript, so it needs to be transpiled to JavaScript using Babel or a similar tool.
 // The JSX code is transformed into a React element object that can be rendered to the DOM.
-const heading = <h1 id="heading">Hello India!</h1>;
-console.log("heading", heading); // This will log the React element object to the console
+const Title = () => <h1 id="heading">Hello India!</h1>;
+
+// componet in react is a function that returns a React element.
+// Here, we define a functional component that returns a React element.
+// Components can be reused and can accept props to customize their output.
+// The component can be used like a regular HTML tag in JSX.
+// The component can also be used to encapsulate logic and state management.
+// The component can be used to create a reusable UI element.
+const HeadingComponent = () => {
+    return <h2>Hello Javascript</h2>
+}
+
+const Header = () => {
+    return (
+        <div>
+            <Title/>
+            <HeadingComponent/>
+        </div>
+    )
+}
+console.log("header", Header); // This will log the React element object to the console
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(heading);
+root.render(<Header/>);

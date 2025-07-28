@@ -73,3 +73,22 @@ Example: npm run prettier:write reformats your messy code instantly.
 * Babel - It takes JSX and transpiled so that js engine understands.
 * Jsx -> transpiled before it reaches the JS -> PARCEL -> BABEL
 * jsx -> React.createElemnt -> JS object ->HTML element(render)
+* There are 2 types of react components:
+- Class Based Components - older way of writing code
+- Functional comonents - new way of writing code
+
+* Functional Component - it just a normal function which return some jsx.     
+Note -  always start naming of a component with capital letter
+*  componet in react is a function that returns a React element.
+
+* component Composition : composing two or more components into one another. 
+or eg:  const Header = () => {
+    return (
+        <div>
+            <Title/>
+            <HeadingComponent/>
+        </div>
+    )
+}
+
+
