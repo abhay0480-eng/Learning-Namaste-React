@@ -6,3 +6,10 @@
 
 - join method: eg: const food = ["burger", "pizza", "chinease", "indian"] when i use in line with comma seperated : food.join(',') in UI
 - key property: while using map we should mention unique key , beacuse react identify each item uniquely. reson for key is suppose if we do not mention key prop and some new item add to list then react render all the list again, because react does not know which restrant card is new, it not uniquely identify items, it will re rendered all the items again , so if we mention key prop while looping items then react already know previous item and only render the item which is new , same for delete , update
+
+* Everything we do with react we can also do with HTML, CSS, Javascript , Why React? Because it makes your developer experince easy, makes you write less code and do more on the web page and build large scale , production ready, performant application and react also do optimization so that thing running fast.
+
+* There are two kinds of exports : 
+1. Default exports
+2. Named exports : when in a single file you have to exports multiple things, to use named export we only write export infront of const variable .
+

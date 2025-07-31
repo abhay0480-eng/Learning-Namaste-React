@@ -1,4 +1,5 @@
 import React from "react";
+import { CardImgUrl } from "../utils/constants";
 
 const Card = ({ cardData }) => {
   const {
@@ -14,7 +15,7 @@ const Card = ({ cardData }) => {
     <div className=" p-10 text-left  bg-white rounded-lg max-h-96 min-h-96">
       <div className="w-full h-40 rounded-xl">
         <img
-          src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
+          src={`${CardImgUrl}${cloudinaryImageId}`}
           alt="mylogo"
           className="w-full h-full object-cover rounded-xl"
         />
