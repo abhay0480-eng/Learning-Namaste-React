@@ -1,4 +1,3 @@
-
 # ReactJS Basics
 
 ## 1. What are Props?
@@ -29,8 +28,8 @@ A **config-driven UI** adapts based on configuration data, allowing different us
 
 **Example:**
 
-* In Mumbai, the app shows a discount carousel.
-* In Delhi, no carousel is shown.
+- In Mumbai, the app shows a discount carousel.
+- In Delhi, no carousel is shown.
 
 ## 4. The `join` Method
 
@@ -38,7 +37,7 @@ To display an array as a comma-separated string:
 
 ```js
 const food = ["burger", "pizza", "chinese", "indian"];
-food.join(', '); // "burger, pizza, chinese, indian"
+food.join(", "); // "burger, pizza, chinese, indian"
 ```
 
 ## 5. The `key` Property in Lists
@@ -47,30 +46,30 @@ When rendering lists with `.map()`, always provide a unique `key` prop for each 
 
 **Why is `key` important?**
 
-* Without `key`, React will re-render all items when a list changes.
-* With `key`, React only re-renders the new, updated, or deleted items.
+- Without `key`, React will re-render all items when a list changes.
+- With `key`, React only re-renders the new, updated, or deleted items.
 
 **Example:**
 
 ```jsx
-{restaurants.map((res) => (
-  <RestaurantCard key={res.id} {...res} />
-))}
+{
+  restaurants.map((res) => <RestaurantCard key={res.id} {...res} />);
+}
 ```
 
 ## 6. Why Use React?
 
 While you can build web apps with plain HTML, CSS, and JavaScript, React provides:
 
-* Easier developer experience
-* Less code, more functionality
-* Powerful tools for large-scale, production-ready, high-performance apps
-* Built-in optimizations for fast rendering
+- Easier developer experience
+- Less code, more functionality
+- Powerful tools for large-scale, production-ready, high-performance apps
+- Built-in optimizations for fast rendering
 
 ## 7. Export Types in JavaScript/React
 
-* **Default Export**: Used when you export a single value or component per file.
-* **Named Export**: Used to export multiple values or components from one file.
+- **Default Export**: Used when you export a single value or component per file.
+- **Named Export**: Used to export multiple values or components from one file.
 
 **Example:**
 
@@ -88,8 +87,8 @@ export default App;
 
 **Most common hooks:**
 
-* `useState()`: Adds state variables to functional components. Updating state causes the component to re-render.
-* `useEffect()`: Runs side effects (e.g., fetching data, subscriptions) in your components.
+- `useState()`: Adds state variables to functional components. Updating state causes the component to re-render.
+- `useEffect()`: Runs side effects (e.g., fetching data, subscriptions) in your components.
 
 **Example:**
 
@@ -105,9 +104,9 @@ useEffect(() => {
 
 React uses clever algorithms to keep your UI fast and efficient:
 
-* **Reconciliation (React Fiber)**: Efficiently determines what changed in the UI to update only what's necessary.
-* **Virtual DOM**: An in-memory representation of the real DOM. React computes changes here before touching the actual DOM, which is slower.
-* **Diff Algorithm**: Compares the old Virtual DOM with the new one to find differences, and updates only the changed parts of the real DOM.
+- **Reconciliation (React Fiber)**: Efficiently determines what changed in the UI to update only what's necessary.
+- **Virtual DOM**: An in-memory representation of the real DOM. React computes changes here before touching the actual DOM, which is slower.
+- **Diff Algorithm**: Compares the old Virtual DOM with the new one to find differences, and updates only the changed parts of the real DOM.
 
 ---
 

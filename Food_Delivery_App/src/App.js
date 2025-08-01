@@ -1,7 +1,5 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "../index.css";
-import Card from "./components/Card";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
@@ -15,18 +13,12 @@ import Footer from "./components/Footer";
 // JSX is not valid JavaScript, so it needs to be transpiled to JavaScript using Babel or a similar tool.
 // The JSX code is transformed into a React element object that can be rendered to the DOM.
 
-
-
-
 // componet in react is a function that returns a React element.
 // Here, we define a functional component that returns a React element.
 // Components can be reused and can accept props to customize their output.
 // The component can be used like a regular HTML tag in JSX.
 // The component can also be used to encapsulate logic and state management.
 // The component can be used to create a reusable UI element.
-
-
-
 
 const AppLayout = () => {
   return (
