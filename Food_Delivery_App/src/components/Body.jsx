@@ -1,13 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { cardData } from "../utils/mockData";
 import Card from "./Card";
 
 const Body = () => {
-  const [resData, setResData] = useState(cardData);
+  const [resData, setResData] = useState([]);
   const handleFilter = () => {
     const filterData = resData.filter((res) => res?.info.avgRating > 4);
     setResData(filterData);
   };
+
+  const fetchData = async () => {
+    const reqData = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.90931752971707&lng=78.11142336577177&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+    const resData = await reqData.json()
+    console.log("resData", resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || cardData);
+    setResData(resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants.sort((a, b) => b.info.avgRating - a.info.avgRating) || []);
+
+  }
+
+  useEffect(() => {
+    fetchData()
+  },[])
+
+
   return (
     <div className="">
       <div className="flex justify-between items-center p-4 bg-gray-200">
