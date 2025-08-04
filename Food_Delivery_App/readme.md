@@ -111,5 +111,3 @@ React uses clever algorithms to keep your UI fast and efficient:
 ---
 
 Feel free to add more details or examples as needed. If you need this in a specific format (Markdown with code blocks, bullet points, etc.) or for a certain audience, let me know!
-
-
