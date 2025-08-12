@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router";
 const logo = new URL("../../applogo.png", import.meta.url);
 
 const Header = () => {
@@ -10,11 +11,23 @@ const Header = () => {
       </div>
       <div>
         <ul className="flex space-x-4">
-          <li>Home</li>
-          <li>About Us</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
           <li>Contact Us</li>
           <li>Cart</li>
-          <li onClick={() => loginBtn === "Login" ? setLoginBtn("Logout"): setLoginBtn("Login")}>{loginBtn}</li>
+          <li
+            onClick={() =>
+              loginBtn === "Login"
+                ? setLoginBtn("Logout")
+                : setLoginBtn("Login")
+            }
+          >
+            {loginBtn}
+          </li>
         </ul>
       </div>
     </div>

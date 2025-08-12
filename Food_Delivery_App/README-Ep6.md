@@ -34,6 +34,7 @@ Useeffect function takes two arguments , a callback function and a dependdency a
 - When an api call takes time to fetch data at that time we show a skeleton UI for beeter UX experience
 
 # Create empty Array of 10 elements
+
 ```
  <>
   {Array(10)
@@ -43,49 +44,55 @@ Useeffect function takes two arguments , a callback function and a dependdency a
     ))}
 </>
 ```
- -  Array(10) creates a new array with 10 empty slots (i.e., [empty × 10]).
 
- - .fill("") fills all these slots with empty strings, so you get: ["", "", "", "", "", "", "", "", "", ""].
- - .map() iterates over the array, executing the callback for each item.
+- Array(10) creates a new array with 10 empty slots (i.e., [empty × 10]).
+
+- .fill("") fills all these slots with empty strings, so you get: ["", "", "", "", "", "", "", "", "", ""].
+- .map() iterates over the array, executing the callback for each item.
 - In this callback, we have (_, index) => .... The _ (underscore) is a convention to indicate we don't care about the actual value (which is "" here).
 
-# useState Hook : 
- - How const works with useState in React, and why it’s not actually contradicting JavaScript’s const behavior?
- - 1. How const Works in JavaScript
-        When you declare a variable with const, you cannot reassign the variable itself.
-        ```
-        const x = 5;
-        x = 10; // ❌ Error: Assignment to constant variable.
-        ```
+# useState Hook :
 
-        BUT: If the const variable is an object or array, you can modify its contents (just not reassign it).
-        ```
-        const arr = [1, 2, 3];
-        arr.push(4); // ✅ Allowed
-        // arr = [1, 2, 3, 4]; // ❌ Not allowed (reassignment)
-        ```
-    2. How useState Works in React
-        When you use const with useState, you’re declaring two new variables: the state value and the setter function.
-        const [count, setCount] = useState(0);
+- How const works with useState in React, and why it’s not actually contradicting JavaScript’s const behavior?
+- 1. How const Works in JavaScript
+     When you declare a variable with const, you cannot reassign the variable itself.
 
-        count is the current value of the state (e.g., 0 at first).
+     ```
+     const x = 5;
+     x = 10; // ❌ Error: Assignment to constant variable.
+     ```
 
-        setCount is a function that you call to update the state.
+     BUT: If the const variable is an object or array, you can modify its contents (just not reassign it).
 
-        Both variables themselves never get reassigned, only their contents change.
+     ```
+     const arr = [1, 2, 3];
+     arr.push(4); // ✅ Allowed
+     // arr = [1, 2, 3, 4]; // ❌ Not allowed (reassignment)
+     ```
 
-        The Key Point
-        You’re not changing the value of the const variable itself; you’re changing the value stored in React’s state.
+  2. How useState Works in React
+     When you use const with useState, you’re declaring two new variables: the state value and the setter function.
+     const [count, setCount] = useState(0);
 
-        Example:
-        ```
-        const [count, setCount] = useState(0);
-        ```
+     count is the current value of the state (e.g., 0 at first).
 
-        // This does NOT reassign `count` or `setCount`
-        // It tells React to update its internal state,
-        // and then React will give `count` the new value on the next render.
-        setCount(count + 1);
-        count is a constant reference to a value that React manages for you.
+     setCount is a function that you call to update the state.
 
-        Every time state changes, your component re-renders and count gets the latest value.
+     Both variables themselves never get reassigned, only their contents change.
+
+     The Key Point
+     You’re not changing the value of the const variable itself; you’re changing the value stored in React’s state.
+
+     Example:
+
+     ```
+     const [count, setCount] = useState(0);
+     ```
+
+     // This does NOT reassign `count` or `setCount`
+     // It tells React to update its internal state,
+     // and then React will give `count` the new value on the next render.
+     setCount(count + 1);
+     count is a constant reference to a value that React manages for you.
+
+     Every time state changes, your component re-renders and count gets the latest value.

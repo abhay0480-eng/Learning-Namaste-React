@@ -7,7 +7,7 @@ import { resApiUrl } from "../utils/constants";
 const Body = () => {
   const [resData, setResData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [filteredData, setFilteredData] = useState();
+  const [filteredData, setFilteredData] = useState([]);
   const handleFilter = () => {
     const filterData = resData.filter((res) => res?.info.avgRating > 4);
     setResData(filterData);
@@ -20,13 +20,9 @@ const Body = () => {
         `${resApiUrl}?lat=27.90931752971707&lng=78.11142336577177&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`,
       );
       const resData = await reqData.json();
-      console.log(
-        "resData",
-        resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants || cardData,
-      );
+      console.log("resData", resData);
       setResData(
-        resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants.sort(
+        resData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants.sort(
           (a, b) => b.info.avgRating - a.info.avgRating,
         ) || [],
       );
@@ -42,17 +38,23 @@ const Body = () => {
     fetchData();
   }, []);
 
+  console.log("resDatasss", resData);
+
   useEffect(() => {
     setFilteredData(resData);
   }, [resData]);
 
   const handleSearch = (e) => {
     setLoading(true);
-    const searchValue = e.target.value.toLowerCase()
-    const filterData = resData.filter((res) => res?.info?.name.toLowerCase().includes(searchValue))
+    const searchValue = e.target.value.toLowerCase();
+    const filterData = resData.filter((res) =>
+      res?.info?.name.toLowerCase().includes(searchValue),
+    );
     setFilteredData(filterData.length > 0 ? filterData : resData);
     setLoading(false);
-  }
+  };
+
+  console.log("filteredData", filteredData, resData);
 
   return (
     <div className="">
@@ -66,7 +68,11 @@ const Body = () => {
             {" "}
             Top Rated Restaurants{" "}
           </button>
-          <input type="text" placeholder="Search Restaurants"  onChange={((e) => handleSearch(e))}/>
+          <input
+            type="text"
+            placeholder="Search Restaurants"
+            onChange={(e) => handleSearch(e)}
+          />
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">

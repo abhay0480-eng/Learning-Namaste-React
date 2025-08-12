@@ -3,6 +3,10 @@ import "../index.css";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+import About from "./pages/About";
+import Error from "./pages/Error";
+import MenuPage from "./pages/MenuPage";
 
 // React.createElement is used to create a React element. It is an object that describes a DOM node.
 // const heading = React.createElement("h1", { id: "heading" }, "Hello India!");
@@ -24,12 +28,25 @@ const AppLayout = () => {
   return (
     <div>
       <Header />
-      <Body />
+      <Outlet />
       <Footer />
     </div>
   );
 };
 
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    Component: AppLayout,
+    errorElement: <Error />,
+    children: [
+      { index: true, Component: Body, errorElement: <Error /> },
+      { path: "/about", Component: About, errorElement: <Error /> },
+      { path: "/menu/:id", Component: MenuPage, errorElement: <Error /> },
+    ],
+  },
+]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<AppLayout />);
+root.render(<RouterProvider router={appRouter} />);
